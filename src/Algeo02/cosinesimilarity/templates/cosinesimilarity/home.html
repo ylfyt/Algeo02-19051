@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'cosinesimilarity/css/style.css' %}">
+</head>
+<body>
+    <h1>Search</h1>
+    <form action="search" method='post'>
+        {% csrf_token %} {% comment %} using token to send the data {% endcomment %}
+        <input type="text" name="searchText">
+        <input type="submit" value="Search">
+    </form>
+    {{ cosinesimilarity }}
+</body>
+</html>
