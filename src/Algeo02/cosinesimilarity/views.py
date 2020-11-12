@@ -1,6 +1,6 @@
 from django.http import request
 from django.shortcuts import render
-from .cosineSimilarity import cosine_similarity
+from .cosineSimilarity import cosine_similarity, stemmingDokumen, stemmingQuery
 # Create your views here.
 
 
@@ -10,7 +10,10 @@ def home(request):
 def searchResult(request):
     text = request.POST["searchText"]
     context = {
-        'cosinesimilarity' : cosine_similarity(text),
+        'cosinesimilarity' : stemmingQuery(text),
     }
     return render(request, "cosinesimilarity/home.html", context)
+
+def about(request):
+    return render(request, "cosinesimilarity/about.html")
 
