@@ -3,10 +3,13 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from stop_words import get_stop_words
 import io
 import re
+import os
 
-def cosine_similarity(text):
-    output = None
-    return output
+
+def cosine_similarity(text, doc_uploads):
+    if doc_uploads == []:
+        return "The file is empty"
+    return doc_uploads
 
 def stemmingDokumen(dokumen):
     #Membuat stemmer
@@ -96,4 +99,8 @@ def stemmingQuery(dokumen):
 
     return hasilNoStopword2
 
-
+def deleteDocuments():
+    path = "cosinesimilarity\\static\\cosinesimilarity\\documents\\"
+    for delete in os.listdir(path):
+        paths = os.path.join(path, delete)
+        os.remove(paths)

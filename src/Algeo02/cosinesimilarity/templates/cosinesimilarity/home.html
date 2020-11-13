@@ -3,10 +3,22 @@
 <html>
 <head>
     <title>Mesin Pencari Sederhana</title>
-    <link rel="stylesheet" href="{% static 'cosinesimilarity/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cosinesimilarity/css/styles.css' %}">
 </head>
 <body>
     <h1>Mesin Pencari Sederhana</h1>
+    <form action='uploadFile' method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form}}
+      <button type="submit">Upload</button>
+
+   </form>  
+    <form action="deleteFiles" method='post'>
+        {% csrf_token %} {% comment %} using token to send the data {% endcomment %}
+        <button type="submit">delete files</button>
+    </form>
+
+   </form>  
     <form action="search" method='post'>
         {% csrf_token %} {% comment %} using token to send the data {% endcomment %}
         <input type="text" name="searchText" placeholder="Cari...">
@@ -17,7 +29,5 @@
     <p>Hasil Pencarian: (diurutkan dari tingkat kemiripan tertinggi)</p>
     <hr>
     <a href="/about">Perihal</a>
-
-
 </body>
 </html>
