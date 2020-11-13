@@ -2,6 +2,7 @@ from django.http import request
 from django.shortcuts import render
 from function.stemming import stemmingDokumen, stemmingQuery
 from function.uploadfile import cosine_similarity, deleteDocuments
+from function.cosinesimilarity import cosinesimilarity
 from .models import FileUpload
 from .forms import FileUploadForm
 import os
@@ -76,4 +77,10 @@ def about(request):
     return render(request, "cosinesimilarity/about.html")
 
 def search(request):
-    return render(request, "cosinesimilarity/search.html")
+    textQuery = ""
+    if (request.method == 'POST'):
+        textQuery = request.POST['query']
+    DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
+    fileName = os.listdir(DIRECTORY)
+    contents = cosinesimilarity(textQuery, fileName)
+    return render(request, 'cosinesimilarity/search.html', contents)

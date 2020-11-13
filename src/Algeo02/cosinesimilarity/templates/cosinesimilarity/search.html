@@ -21,7 +21,7 @@
 		<h2>Hasil Pencarian : </h2>
 		
 		{% for number, fileName, firstSentence, title, sim, nbWord in Ans %}
-			<h4><a href="docs\{{fileName}}">{{number}}. {{title}}</a></h4>
+			<h4><a href="cosinesimilarity/static/cosinesimilarity/documents/{{fileName}}">{{number}}. {{title}}</a></h4>
 			<h4>Jumlah kata : {{nbWord}}</h4>
 			<h4>Tingkat kemiripan : {{sim}} %</h4>
 			<h4>{{firstSentence}}</h4>

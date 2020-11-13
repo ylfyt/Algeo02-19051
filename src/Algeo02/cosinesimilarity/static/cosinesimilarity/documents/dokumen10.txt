@@ -1,3 +1,3 @@
 #Sejarah Bahasa Java
 Bahasa java dibuat oleh James Gosling saat masih bergabung di Sun Microsystems dan dirilis tahun 1995. 
-Bahasa Java dapat dijalankan pada berbagai komputer dan platform sistem operasi. Slogan Java: Write once, run anywhere! (Tulis sekali, jalankan di manapun) Java adalah bahasa pemrograman bersifat umum (general purpose). Sintaks Bahasa Java diadopsi dari Bahasa C dan C++ tetapi lebih sederhana. Nama “java” diambil dari jenis kopi yang diminum oleh James Gosling saat itu.
+Bahasa Java dapat dijalankan pada berbagai komputer dan platform sistem operasi. Slogan Java: Write once, run anywhere! (Tulis sekali, jalankan di manapun) Java adalah bahasa pemrograman bersifat umum (general purpose). Sintaks Bahasa Java diadopsi dari Bahasa C dan C++ tetapi lebih sederhana. Nama java diambil dari jenis kopi yang diminum oleh James Gosling saat itu.

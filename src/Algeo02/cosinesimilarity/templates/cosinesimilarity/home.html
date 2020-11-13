@@ -21,7 +21,7 @@
    </form>  
     <form action="search" method='post'>
         {% csrf_token %} {% comment %} using token to send the data {% endcomment %}
-        <input type="text" name="searchText" placeholder="Cari...">
+        <input type="text" name="query" placeholder="Cari...">
         <input type="submit" value="Cari">
     </form>
     <p>{{ cosinesimilarity }}</p>

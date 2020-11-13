@@ -4,7 +4,7 @@ from .stemming import stemmingDokumen, stemmingQuery
 
 def cosinesimilarity(textQuery, fileName):
 
-	DIRECTORY = "docs/"
+	DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
 
 	title = []
 	firstSentence = []
