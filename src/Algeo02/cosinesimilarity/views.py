@@ -1,6 +1,7 @@
 from django.http import request
 from django.shortcuts import render
-from .cosineSimilarity import cosine_similarity, deleteDocuments
+from function.stemming import stemmingDokumen, stemmingQuery
+from function.uploadfile import cosine_similarity, deleteDocuments
 from .models import FileUpload
 from .forms import FileUploadForm
 import os
@@ -73,3 +74,6 @@ def deleteFiles(request):
 
 def about(request):
     return render(request, "cosinesimilarity/about.html")
+
+def search(request):
+    return render(request, "cosinesimilarity/search.html")

@@ -5,8 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home, name='cosinesimilarity-home'),
-    path('search', views.searchResult, name='cosinesimilarity-search'),
+    # path('search', views.searchResult, name='cosinesimilarity-search'),
     path('uploadFile', views.uploadFiles, name='cosinesimilarity-uploadFiles'),
     path('deleteFiles', views.deleteFiles, name='cosinesimilarity-uploadFiles'),
     path('about', views.about, name='about'),
+    path('search', views.search, name='search'),
 ]

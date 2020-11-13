@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Algeo</title>
+</head>
+<body>
+	<h1>Ini adalah home</h1>
+	<ul>
+		<li><a href="/">Home</a></li>
+	</ul>
+
+	<form action="search" method="post">
+		{% csrf_token %}
+		<input type="text" name="query" id="query">
+		<button type="Submit">Search</button>
+	</form>
+
+	<!-- Untuk Menampilkan hasil pencarian -->
+	{% if Error == False %}
+		
+		<h2>Hasil Pencarian : </h2>
+		
+		{% for number, fileName, firstSentence, title, sim, nbWord in Ans %}
+			<h4><a href="docs\{{fileName}}">{{number}}. {{title}}</a></h4>
+			<h4>Jumlah kata : {{nbWord}}</h4>
+			<h4>Tingkat kemiripan : {{sim}} %</h4>
+			<h4>{{firstSentence}}</h4>
+			<br>
+		{% endfor %}
+		
+		<table style="width:100%">
+			{% for row in Table %}
+				<tr>
+					{% for col in row %}
+						<td>{{col}}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</table>
+
+	{% else %}
+		<h2>Hasil Pencarian : </h2>
+		<h3 style="color:red">Tidak Dapat Melakukan Pencarian</h3>
+
+	{% endif %}
+	<!-- Untuk Menampilkan hasil pencarian -->
+
+	<br>
+	<p><a href="about/">about</a></p>
+
+
+</body>
+</html>
