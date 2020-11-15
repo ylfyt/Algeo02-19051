@@ -26,7 +26,12 @@
 			<h5>Hasil Pencarian : </h5>
 			
 			{% for number, fileName, firstSentence, title, sim, nbWord in Ans %}
-				<h6><a href="cosinesimilarity/static/cosinesimilarity/documents/{{fileName}}">{{number}}. {{title}}</a></h6>
+				<h6>
+				<form action="dokumen" method = 'post'>
+					{% csrf_token %}
+					<button type="submit" class="btn btn-link" name="{{fileName}}">{{number}}. {{title}}</button>
+				</form>
+				</h6>
 				<ul>
 					<li>Jumlah kata : {{nbWord}}</li>
 					<li>Tingkat kemiripan : {{sim}} %</li>

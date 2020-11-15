@@ -1,15 +1,17 @@
 from django.http import request
 from django.shortcuts import render
 from function.stemming import stemmingDokumen, stemmingQuery
-from function.uploadfile import cosine_similarity, deleteDocuments
+from function.uploadfile import deleteDocuments, conv_txt_to_html
 from function.cosinesimilarity import cosinesimilarity
 from .models import FileUpload
 from .forms import FileUploadForm
 import os
 # Create your views here.
 
+DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
 # kumpulan document yang diupload
-doc_uploads = []
+fileName = os.listdir(DIRECTORY)
+conv_txt_to_html(fileName)
 
 def home(request):
     formUpload = FileUploadForm()
@@ -19,57 +21,35 @@ def home(request):
     return render(request, "cosinesimilarity/home.html", context)
 
 def uploadFiles(request):
-    global doc_uploads
+    global fileName
     formUpload = FileUploadForm()
-    doc_uploads = []
     context = {
         'form' : formUpload,
     }
     if request.method == "POST":
-        print(request.POST)
         formUpload = FileUploadForm(request.POST, request.FILES)
         files = request.FILES.getlist('uploadfile')
-        path_doc = "cosinesimilarity\\static\\cosinesimilarity\\documents\\"
-        doc_uploads = []
-        for fileindoc in os.listdir(path_doc):
-            if not (fileindoc in doc_uploads):
-                doc_uploads.append(str(fileindoc))
-        print("doc_upload", doc_uploads)
         if formUpload.is_valid():
+            # file baru yang diupload
+            newFiles = []
             for file in files:
-                if not(str(file) in doc_uploads):
-                    print(file)
-                    doc_uploads.append(str(file))
+                if not(str(file) in fileName):
+                    newFiles.append(str(file))
+                    # upload file
                     instancefile = FileUpload(uploadfile = file)
                     instancefile.save()
-    print(doc_uploads)
+            if newFiles != []:
+                conv_txt_to_html(newFiles)
+                fileName += newFiles
     return render(request, 'cosinesimilarity/home.html', context)
 
-def searchResult(request):
-    global doc_uploads
-    text = None
-    formUpload = FileUploadForm()
-    context = {
-        'form' : formUpload
-    }
-    doc_uploads = []
-    path_doc = "cosinesimilarity\\static\\cosinesimilarity\\documents\\"
-    for fileindoc in os.listdir(path_doc):
-        doc_uploads.append(str(fileindoc))
-    
-    if request.method == "POST":
-        text = request.POST["searchText"]
-        context = {
-            'cosinesimilarity' : cosine_similarity(text, doc_uploads),
-            'form' : formUpload
-        }
-    return render(request, "cosinesimilarity/home.html", context)
-
 def deleteFiles(request):
+    global fileName
     formUpload = FileUploadForm()
     context = {
         'form' : formUpload
     }
+    fileName = []
     deleteDocuments()
     return render(request, "cosinesimilarity/home.html", context)
 
@@ -80,7 +60,17 @@ def search(request):
     textQuery = ""
     if (request.method == 'POST'):
         textQuery = request.POST['query']
-    DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
-    fileName = os.listdir(DIRECTORY)
     contents = cosinesimilarity(textQuery, fileName)
+
     return render(request, 'cosinesimilarity/search.html', contents)
+
+def dokumen(request):
+    count = 0
+    post = None
+    for key in request.POST.keys():
+        if count == 1:
+            post = key
+        count += 1
+    if request.method == "POST":
+        return render(request, 'cosinesimilarity/documents/'+post[:-4]+".html")
+    return render(request, "cosinesimilarity/home.html", context)
