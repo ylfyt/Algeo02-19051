@@ -16,7 +16,7 @@
 		<hr>
 		<form action="search" method='post'>
             {% csrf_token %} {% comment %} using token to send the data {% endcomment %}
-            <input type="text" name="query" placeholder="Cari...">
+            <input type="text" name="query" placeholder="Cari..." size="100">
             <input type="submit" value="Cari" class="btn-primary">
         </form>
 		<br>

@@ -3,7 +3,10 @@
 ### Anggota Kelompok
 - Yudi Alfayat (13519051)                         
 - Mgs. Tabrani (13519122)
-- Muhammad Zubair (13519172)
+- Muhammad Zubair (13519172)''
+
+### Deskripsi Singkat
+Program ini diberi nama "Mesin Pencari Sederhana". Program dibuat dengan framework Django. Library yang digunakan meliputi library Sastrawi, stop-word dan Bootstrap. Program memanfaatkan prinsip cosine similarity untuk menentukan kecocokan query dengan dokumen yang ada.
 
 ### Instalasi Library yang Diperlukan
 - Instal library sastrawi
@@ -28,3 +31,9 @@ python manage.py runserver
 - Kemudian, akan muncul similaritas masing-masing dokumen beserta tabel vektor masing-masing dokumen
 - Dokumen yang sudah diunggah akan disimpan di server
 - Dokumen yang ada di server bisa dihapus
+
+### Lampiran 
+![Alt text](doc/home.png?raw=true "Halaman Utama")
+![Alt text](doc/perihal.png?raw=true "Perihal")
+![Alt text](doc/search(1).png?raw=true "Halaman Utama")
+![Alt text](doc/search(2).png?raw=true "Halaman Utama")
