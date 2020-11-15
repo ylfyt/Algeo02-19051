@@ -1,6 +1,5 @@
 from django.http import request
 from django.shortcuts import render
-from function.stemming import stemmingDokumen, stemmingQuery
 from function.uploadfile import deleteDocuments, conv_txt_to_html
 from function.cosinesimilarity import cosinesimilarity
 from .models import FileUpload
@@ -73,4 +72,4 @@ def dokumen(request):
         count += 1
     if request.method == "POST":
         return render(request, 'cosinesimilarity/documents/'+post[:-4]+".html")
-    return render(request, "cosinesimilarity/home.html", context)
+    return render(request, "cosinesimilarity/home.html")

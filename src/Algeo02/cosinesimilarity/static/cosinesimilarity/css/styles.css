@@ -1,16 +1,3 @@
 h3 {
     text-align  : center;
 }
-
-#button_title {
-    font-family: Bungee;
-	font-size: 36px;
-	font-weight: 400;
-	text-align: center;
-	justify-content: center;
-	min-width: 327px;
-	max-width: 445px;
-	align-items: center;
-	line-height: 42.1875px;
-	height: 200px;
-}

@@ -1,10 +1,16 @@
 import os
 
 def deleteDocuments():
-    path = "cosinesimilarity\\static\\cosinesimilarity\\documents\\"
-    for delete in os.listdir(path):
-        paths = os.path.join(path, delete)
-        os.remove(paths)
+	DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
+	DIRHTML = "cosinesimilarity/templates/cosinesimilarity/documents/"
+	
+	for delete in os.listdir(DIRECTORY):
+		paths = os.path.join(DIRECTORY, delete)
+		os.remove(paths)
+
+	for delete in os.listdir(DIRHTML):
+		paths = os.path.join(DIRHTML, delete)
+		os.remove(paths)
 
 def conv_txt_to_html(files):
 	DIRECTORY = "cosinesimilarity/static/cosinesimilarity/documents/"
@@ -36,4 +42,3 @@ def conv_txt_to_html(files):
 				wf.write(t+'</div>\n')
 				wf.write('</body>\n')
 				wf.write('</html>\n')
-				#
