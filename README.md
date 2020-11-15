@@ -35,5 +35,5 @@ python manage.py runserver
 ### Lampiran 
 ![Alt text](doc/home.png?raw=true "Halaman Utama")
 ![Alt text](doc/perihal.png?raw=true "Perihal")
-![Alt text](doc/search(1).png?raw=true "Halaman Utama")
-![Alt text](doc/search(2).png?raw=true "Halaman Utama")
+![Alt text](doc/search1.png?raw=true "Halaman Utama(1)")
+![Alt text](doc/search2.png?raw=true "Halaman Utama(2)")
