@@ -39,6 +39,13 @@ python manage.py runserver
 - Dokumen yang sudah diunggah akan disimpan di server
 - Dokumen yang ada di server bisa dihapus
 
+### Spesifikasi Dokumen
+- Dokumen disimpan di dalam file dengan format .txt
+- Dalam penamaan file, tidak boleh ada spasi dan dapat diganti dengan tanda underscore
+- Baris pertama adalah judul dari dokumen tersebut, dan pada awal judulnya diberi tanda "#"
+- Baris kedua adalah kalimat pertama dari dokumen tersebut
+- Baris selanjutnya adalah sisa dari isi dokumen
+
 ### Lampiran 
 - Halaman Utama
 ![Alt text](test/screenshoot-program/home.png?raw=true "Halaman Utama")
