@@ -8,6 +8,13 @@
 ### Deskripsi Singkat
 Program ini diberi nama "Mesin Pencari Sederhana". Program dibuat dengan framework Django. Library yang digunakan meliputi library Sastrawi, stop-word dan Bootstrap. Program memanfaatkan prinsip cosine similarity untuk menentukan kecocokan query dengan dokumen yang ada.
 
+### Setup Environment
+- Python versi 3.7 ke atas
+- Install Django
+```
+pip install Django
+```
+
 ### Instalasi Library yang Diperlukan
 - Instal library sastrawi
 ```
