@@ -45,6 +45,7 @@ python manage.py runserver
 - Baris pertama adalah judul dari dokumen tersebut, dan pada awal judulnya diberi tanda "#"
 - Baris kedua adalah kalimat pertama dari dokumen tersebut
 - Baris selanjutnya adalah sisa dari isi dokumen
+- jika ada subjudul pada bagian isi dokumen, pada awal subjudulnya diberi tanda '#'
 
 ### Lampiran 
 - Halaman Utama
