@@ -33,7 +33,11 @@ python manage.py runserver
 - Dokumen yang ada di server bisa dihapus
 
 ### Lampiran 
+- Halaman Utama
 ![Alt text](doc/home.png?raw=true "Halaman Utama")
+- Halaman Perihal
 ![Alt text](doc/perihal.png?raw=true "Perihal")
+- Hasil Pencarian (1)
 ![Alt text](doc/search1.png?raw=true "Halaman Utama(1)")
+- Hasil Pencarian (2)
 ![Alt text](doc/search2.png?raw=true "Halaman Utama(2)")
