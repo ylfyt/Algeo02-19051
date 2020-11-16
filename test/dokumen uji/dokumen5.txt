@@ -1,0 +1,23 @@
+#Materi Fisika Dasar IA
+Terdapat dua puluh bab Fisika Dasar IA dalam buku Fisika Dasar karangan Halliday, Resnick, dan Walker. 
+Dua puluh bab ini termuat dalam dua bagian. Berikut daftar dua puluh bab tersebut.
+1.	pengukuran;
+2.	gerak sepanjang garis lurus;
+3.	vektor;
+4.	gerak pada dua-dimensi dan tiga-dimensi;
+5.	gaya dan gerak-I;
+6.	gaya dan gerak-II;
+7.	usaha dan energi kinetik;
+8.	energi potensial dan konservasi energi;
+9.	pusat massa dan momentum linear;
+10.	rotas;
+11.	gerak mengelinding;
+12.	kesetimbangan dan elastisitas;
+13.	gravitasi;
+14.	fluida;
+15.	osilasi;
+16.	gelombang-I;
+17.	gelombang-II;
+18.	temperature, kalor, dan hukum pertama termodinamika;
+19.	teori kinetik gas; dan
+20.	entropi dan hukum termodinamika
